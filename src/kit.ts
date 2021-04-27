@@ -61,4 +61,8 @@ export class KirbicApiKit {
     const product = await this.api.post<Product>("/catalog/product", data);
     return product.data;
   };
+
+  static create(config: ApiConfig) {
+    return new KirbicApiKit(config);
+  }
 }
