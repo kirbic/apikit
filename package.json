@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Marc Pomar <marc@corecode.school>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "axios": "^0.21.1"
   },
