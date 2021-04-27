@@ -7,7 +7,8 @@
     "esModuleInterop": true,
     "outDir": "dist",
     "declaration": true,
-    "importHelpers": false
+    "importHelpers": false,
+    "experimentalDecorators": true
   },
   "include": ["src/**/*"]
 }
