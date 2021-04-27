@@ -62,6 +62,11 @@ export class KirbicApiKit {
     return product.data;
   };
 
+  delete_all = async () => {
+    const product = await this.api.post("/catalog/product/delete_all");
+    return product.data;
+  };
+
   static create(config: ApiConfig) {
     return new KirbicApiKit(config);
   }
