@@ -1,4 +1,3 @@
-import { Awaited } from "ts-essentials";
 import { get_api, ApiConfig } from "./api";
 import { Endpoints } from "@kirbic/types";
 import { AxiosError, AxiosInstance } from "axios";
@@ -12,7 +11,7 @@ export type CartActionMode = Endpoints["PATCH /cart/{mode}/{price_id}"]["paramet
 export type ProductCreateParams = Endpoints["POST /catalog/product/"]["parameters"];
 export type Product = Endpoints["POST /catalog/product/"]["response"]["data"];
 
-const api_error = async <T>(arg0: T): Promise<T> => {
+export const api_error = async <T>(arg0: T): Promise<T> => {
   try {
     return await arg0;
   } catch (error) {
@@ -34,14 +33,13 @@ export class KirbicApiKit {
   }
 
   async get_cart() {
-    const res = await api_error(this.api.get<Cart>("/cart"));
+    const res = await this.api.get<Cart>("/cart");
     return res.data;
   }
 
   async set_metadata(metadata: Record<string, unknown>) {
-    const res = await api_error(
-      this.api.post<Cart>("/cart/metadata/", metadata)
-    );
+    const res = await this.api.post<Cart>("/cart/metadata/", metadata);
+
     return res.data;
   }
 
@@ -50,22 +48,19 @@ export class KirbicApiKit {
     price_id: string,
     quantity: number
   ) {
-    const res = await api_error(
-      this.api.patch<Cart>(`/cart/${mode}/${price_id}`, {
-        quantity,
-      })
-    );
+    const res = await this.api.patch<Cart>(`/cart/${mode}/${price_id}`, {
+      quantity,
+    });
     return res.data;
   }
 
   async delete_cart() {
-    await api_error(this.api.delete("/cart/"));
+    await this.api.delete("/cart/");
   }
 
   async create_product(data: ProductCreateParams) {
-    const product = await api_error(
-      this.api.post<Product>("/catalog/product", data)
-    );
+    const product = await this.api.post<Product>("/catalog/product", data);
+
     return product.data;
   }
 }
