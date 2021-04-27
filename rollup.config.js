@@ -4,7 +4,7 @@ export default {
   input: ["src/api.ts", "src/cli.ts", "src/kit.ts"],
   output: {
     dir: "./dist",
-    format: "esm",
+    format: "cjs",
   },
   plugins: [typescript()],
 };

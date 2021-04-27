@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "esnext",
     "strict": true,
     "target": "es2020",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "outDir": "dist",
-    "declaration": true
+    "declaration": true,
+    "importHelpers": false
   },
   "include": ["src/**/*"]
 }
