@@ -32,35 +32,33 @@ export class KirbicApiKit {
     this.api = get_api(config);
   }
 
-  async get_cart() {
+  get_cart = async () => {
     const res = await this.api.get<Cart>("/cart");
     return res.data;
-  }
+  };
 
-  async set_metadata(metadata: Record<string, unknown>) {
+  set_metadata = async (metadata: Record<string, unknown>) => {
     const res = await this.api.post<Cart>("/cart/metadata/", metadata);
-
     return res.data;
-  }
+  };
 
-  async cart_action_api(
+  cart_action_api = async (
     mode: CartActionMode,
     price_id: string,
     quantity: number
-  ) {
+  ) => {
     const res = await this.api.patch<Cart>(`/cart/${mode}/${price_id}`, {
       quantity,
     });
     return res.data;
-  }
+  };
 
-  async delete_cart() {
+  delete_cart = async () => {
     await this.api.delete("/cart/");
-  }
+  };
 
-  async create_product(data: ProductCreateParams) {
+  create_product = async (data: ProductCreateParams) => {
     const product = await this.api.post<Product>("/catalog/product", data);
-
     return product.data;
-  }
+  };
 }
