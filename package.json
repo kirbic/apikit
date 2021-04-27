@@ -8,7 +8,10 @@
     "access": "public"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "@rollup/plugin-multi-entry": "^4.0.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "axios": "^0.21.1",
+    "rollup": "^2.45.2"
   },
   "peerDependencies": {
     "fs-extra": "^9.1.0"
@@ -25,7 +28,7 @@
     "typescript": "^4.2.4"
   },
   "scripts": {
-    "build": "pika build"
+    "build": "rollup -c"
   },
   "release": {
     "branches": "master",
@@ -33,30 +36,7 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/github",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "./pkg"
-        }
-      ]
-    ]
-  },
-  "@pika/pack": {
-    "pipeline": [
-      [
-        "@pika/plugin-ts-standard-pkg"
-      ],
-      [
-        "@pika/plugin-build-node"
-      ],
-      [
-        "@pika/plugin-build-web",
-        {
-          "entrypoint": [
-            "cli.ts"
-          ]
-        }
-      ]
+      "@semantic-release/npm"
     ]
   }
 }
