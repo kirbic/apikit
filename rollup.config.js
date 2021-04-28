@@ -6,5 +6,5 @@ export default {
     dir: "./dist",
     format: "cjs",
   },
-  plugins: [typescript()],
+  plugins: [typescript({ target: "es5" })],
 };
