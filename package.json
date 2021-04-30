@@ -14,7 +14,7 @@
     "fs-extra": "^9.1.0"
   },
   "devDependencies": {
-    "@kirbic/types": "^1.0.6",
+    "@kirbic/types": "^1.0.7",
     "@pika/pack": "^0.5.0",
     "@pika/plugin-build-node": "^0.9.2",
     "@pika/plugin-build-types": "^0.9.2",
