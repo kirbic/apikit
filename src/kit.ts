@@ -11,6 +11,12 @@ export type CartActionMode = Endpoints["PATCH /cart/{mode}/{price_id}"]["paramet
 export type ProductCreateParams = Endpoints["POST /catalog/product/"]["parameters"];
 export type Product = Endpoints["POST /catalog/product/"]["response"]["data"];
 
+export type OrderCreate = Endpoints["POST /order/"]["parameters"];
+export type Order = Endpoints["POST /order/"]["response"]["data"];
+
+export type AddPayment = Endpoints["POST /payment/add-payment"]["parameters"];
+export type Payment = Endpoints["POST /payment/add-payment"]["response"]["data"];
+
 export const api_error = async <T>(arg0: T): Promise<T> => {
   try {
     return await arg0;
@@ -65,6 +71,16 @@ export class KirbicApiKit {
   delete_all = async () => {
     const product = await this.api.post("/catalog/product/delete_all");
     return product.data;
+  };
+
+  create_order = async (data: OrderCreate) => {
+    const order = await this.api.post<Order>("/order", data);
+    return order.data;
+  };
+
+  add_payment = async (data: AddPayment) => {
+    const payment = await this.api.post<Payment>("/payment/add-payment", data);
+    return payment.data;
   };
 
   static create(config: ApiConfig) {

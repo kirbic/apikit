@@ -862,22 +862,22 @@
     "@babel/helper-validator-identifier" "^7.12.11"
     to-fast-properties "^2.0.0"
 
-"@kirbic/openapi-types@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@kirbic/openapi-types/-/openapi-types-1.1.5.tgz#0dc5dfcff21b71987efa872ea207874e10cf2fe3"
-  integrity sha512-4ks0yLJLTLZK3zjlKc6Yx2NpDIiqTUunZvc6EFD/33JKTvBeferB+qsRH/cMbjNUJVPa+omlZwvw3nwDJ2yhpQ==
+"@kirbic/openapi-types@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@kirbic/openapi-types/-/openapi-types-1.1.7.tgz#af370bd966bdeb85bec14297794da07e7865d07b"
+  integrity sha512-4XK97NCtHF1y8+HOVZXBxXvCauT4sz4G8vZ8K2EXeNPROHBeG8VjuIPAxYO2k0lAQ1VLHSwoaQOzRwiwHScAyw==
   dependencies:
     axios "^0.21.1"
     fs-extra "^9.1.0"
     ts-node "^9.1.1"
     typescript "^4.2.3"
 
-"@kirbic/types@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@kirbic/types/-/types-1.0.4.tgz#438c00b03efd6b2c674309f044f74985ab048548"
-  integrity sha512-Tm4g4KC5fXvHu+8tf2hdNIM8ocDYm+qvoG24Vw2TvSXzrKL5EzAOuQmeucaKGdSSW+2Or5IemQArRxBMXltwKA==
+"@kirbic/types@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@kirbic/types/-/types-1.0.6.tgz#1db4090b4fa82efd739b1e2249ac1937da6b5a49"
+  integrity sha512-bMMVzF5ViX04qUg8BgbFyzm/C3riMRFaABMeVi7r9UxTUgP0O3GxguARmpzQNUziGkcJwHqUqJEHPQeA5BLaLQ==
   dependencies:
-    "@kirbic/openapi-types" "^1.1.5"
+    "@kirbic/openapi-types" "^1.1.7"
     "@pika/plugin-build-web" "^0.9.2"
     "@pika/plugin-ts-standard-pkg" "^0.9.2"
     got "^9.6.0"
